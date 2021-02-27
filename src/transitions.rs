@@ -12,12 +12,6 @@ use teloxide_macros::teloxide;
 
 #[teloxide(subtransition)]
 async fn ready(_state: ReadyState, cx: TransitionIn, ans: String) -> TransitionOut<Dialogue> {
-    log::info!("ready");
-    log::info!(
-        "connecting to {}",
-        &env::var("DATABASE_URL").expect("could not find $DATABASE_URL")
-    );
-
     let ans = ans.as_str();
     match ans {
         "/nocontext" | "/nctx" => {
