@@ -20,7 +20,7 @@ async fn ready(_state: ReadyState, cx: TransitionIn, ans: String) -> TransitionO
 
     let ans = ans.as_str();
     match ans {
-        "/nocontext" | "nocontext@Iamdoor_bot" | "/nctx" | "/nctx@Iamdoor_bot" => {
+        "/nocontext" | "/nctx" => {
             log::info!("recieved /nctx");
 
             let pool = db().await;
